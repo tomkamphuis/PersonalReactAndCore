@@ -1,0 +1,7 @@
+configuration: Release
+# restore NuGet packages before running MS Build
+before_build:
+  - nuget restore
+# package Web Application project for Web Deploy
+build:
+  verbosity: minimal
