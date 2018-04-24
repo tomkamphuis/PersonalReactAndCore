@@ -15,4 +15,10 @@ cache:
   - TomKamphuis.Web\node_modules
   
 artifacts:
-  - path: test.zip
+  - path: bin
+    name: binfolder
+    type: zip
+    
+  - path: TomKamphuis.Web\wwwroot
+    name: wwwroot_folder
+    type: zip
