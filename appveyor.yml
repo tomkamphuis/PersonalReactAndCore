@@ -9,6 +9,3 @@ image: Visual Studio 2017
 # package Web Application project for Web Deploy
 build:
   verbosity: minimal
-  
-artifacts:
-  - path: build\tomkamphuis-*.zip
