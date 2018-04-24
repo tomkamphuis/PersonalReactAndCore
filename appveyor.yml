@@ -8,4 +8,8 @@ image: Visual Studio 2017
 
 # package Web Application project for Web Deploy
 build:
-  verbosity: minimal
+  verbosity: detailed
+  publish_wap_xcopy: true
+  
+cache:
+  - node_modules
