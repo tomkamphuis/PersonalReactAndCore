@@ -17,4 +17,4 @@ cache:
 artifacts:
   - path: TomKamphuis.Web
     name: DeploymentPackage
-    type: WebDeployPackage
+    type: zip
