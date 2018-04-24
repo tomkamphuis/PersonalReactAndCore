@@ -8,8 +8,11 @@ image: Visual Studio 2017
 
 # package Web Application project for Web Deploy
 build:
-  verbosity: detailed
+  verbosity: normal
   publish_wap_xcopy: true
   
 cache:
-  - node_modules
+  - TomKamphuis.Web\node_modules
+  
+artifacts:
+  - path: test.zip
