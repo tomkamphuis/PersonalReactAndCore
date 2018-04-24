@@ -15,10 +15,6 @@ cache:
   - TomKamphuis.Web\node_modules
   
 artifacts:
-  - path: bin
-    name: binfolder
-    type: zip
-    
-  - path: TomKamphuis.Web\wwwroot
-    name: wwwroot_folder
-    type: zip
+  - path: TomKamphuis.Web
+    name: DeploymentPackage
+    type: WebDeployPackage
