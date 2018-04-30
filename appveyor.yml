@@ -11,9 +11,6 @@ build:
   verbosity: normal
   publish_wap_xcopy: true
   
-cache:
-  - TomKamphuis.Web\node_modules
-  
 artifacts:
   - path: TomKamphuis.Web
     name: DeploymentPackage
