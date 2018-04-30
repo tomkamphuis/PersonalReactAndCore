@@ -10,7 +10,8 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
 			<ul>
 				<li>Attempt 1</li>
 				<li>Attempt 2</li>
-				<li>Attempt 2</li>
+				<li>Attempt 3</li>
+				<li>Attempt 4</li>
 			</ul>
         </div>;
     }
