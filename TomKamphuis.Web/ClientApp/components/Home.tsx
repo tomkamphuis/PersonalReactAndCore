@@ -6,7 +6,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
         return <div>
             <h1>Hello, I am robot!</h1>
             <p>This is a mere example of how to build and deploy an application using .NET Core and React. This is a good question...</p>
-			<p>Test to interact with Azure functions.</p>
+			<p>Test to interact with Azure functions and BetterCodeHub.</p>
         </div>;
     }
 }
