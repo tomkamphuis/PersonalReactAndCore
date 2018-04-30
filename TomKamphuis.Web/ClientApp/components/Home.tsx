@@ -9,6 +9,7 @@ export class Home extends React.Component<RouteComponentProps<{}>, {}> {
 			<p>Test to interact with Azure functions and BetterCodeHub.</p>
 			<ul>
 				<li>Attempt 1</li>
+				<li>Attempt 2</li>
 			</ul>
         </div>;
     }
