@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TomKamphuis.Repositories.Implementations;
+using TomKamphuis.Repositories.Interfaces;
 
 namespace TomKamphuis.Web
 {
@@ -19,6 +21,8 @@ namespace TomKamphuis.Web
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc();
+
+			services.AddTransient<IProductRepository, ProductRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

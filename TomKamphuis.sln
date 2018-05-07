@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomKamphuis.Web", "TomKamph
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomKamphuis.Web.Tests", "TomKamphuis.Web.Tests\TomKamphuis.Web.Tests.csproj", "{B4D5321B-A90B-4BAC-8A27-3199381049B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomKamphuis.Models", "TomKamphuis.Models\TomKamphuis.Models.csproj", "{F300069F-63DA-459C-B68B-7FDF224BFF7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomKamphuis.Models", "TomKamphuis.Models\TomKamphuis.Models.csproj", "{F300069F-63DA-459C-B68B-7FDF224BFF7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomKamphuis.Repositories", "TomKamphuis.Repositories\TomKamphuis.Repositories.csproj", "{45E22F9A-F6A8-47DF-9E0E-F2E946B3F0F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F300069F-63DA-459C-B68B-7FDF224BFF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F300069F-63DA-459C-B68B-7FDF224BFF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F300069F-63DA-459C-B68B-7FDF224BFF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E22F9A-F6A8-47DF-9E0E-F2E946B3F0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E22F9A-F6A8-47DF-9E0E-F2E946B3F0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E22F9A-F6A8-47DF-9E0E-F2E946B3F0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E22F9A-F6A8-47DF-9E0E-F2E946B3F0F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
