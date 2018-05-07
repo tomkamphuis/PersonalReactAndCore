@@ -1,0 +1,8 @@
+component_depth: 1
+languages:
+- csharp
+- typescript
+- javascript
+exclude:
+- .*/webpack\.config\.js
+- .*/webpack\.config\.vendor\.js
