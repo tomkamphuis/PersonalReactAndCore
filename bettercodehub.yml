@@ -4,5 +4,5 @@ languages:
 - typescript
 - javascript
 exclude:
-- /TomKamphuis.Web/webpack.config.js
-- /TomKamphuis.Web/webpack.config.vendor.js
+- /TomKamphuis\.Web/webpack\.config.js
+- /TomKamphuis\.Web/webpack\.config\.vendor.js
