@@ -43,7 +43,6 @@ export class FetchProduct extends React.Component<RouteComponentProps<{}>, IFetc
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th>Id</th>
 					<th>Website</th>
 					<th>Description</th>
 				</tr>
@@ -52,7 +51,6 @@ export class FetchProduct extends React.Component<RouteComponentProps<{}>, IFetc
 				{products.map(product =>
 				<tr key={ product.id }>
 					<td>{ product.name }</td>
-					<td>{ product.id }</td>
 					<td>{ product.websiteUrl }</td>
 					<td>{product.description }</td>
 				</tr>
