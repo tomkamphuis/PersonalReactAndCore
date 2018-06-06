@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Moq;
 using TomKamphuis.Models;
 using TomKamphuis.Repositories.Interfaces;
@@ -16,9 +17,10 @@ namespace TomKamphuis.Web.Tests.Controllers
 		{
 			var mockRepository = new Mock<IProductRepository>();
 
+
 			mockRepository
 				.Setup(p => p.GetProducts())
-				.Returns(new List<Product> {new Product {Id = 1, Name = "Funda"}});
+				.Returns(new List<Product> {new Product {RowKey = "Funda"}});
 
 			_controller = new ProductController(mockRepository.Object);
 		}

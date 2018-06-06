@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TomKamphuis.Repositories.Base;
 using TomKamphuis.Repositories.Implementations;
 using TomKamphuis.Repositories.Interfaces;
 
@@ -22,6 +23,7 @@ namespace TomKamphuis.Web
 		{
 			services.AddMvc();
 
+			services.AddSingleton<IBaseRepository>(new BaseRepository(Configuration["ConnectionString"]));
 			services.AddTransient<IProductRepository, ProductRepository>();
 		}
 

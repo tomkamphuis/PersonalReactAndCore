@@ -1,53 +1,34 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TomKamphuis.Models;
 using TomKamphuis.Repositories.Interfaces;
+using Microsoft.WindowsAzure.Storage.Table;
+using TomKamphuis.Repositories.Base;
 
 namespace TomKamphuis.Repositories.Implementations
 {
 	public class ProductRepository : IProductRepository
 	{
-		private readonly List<Product> _products = new List<Product>
-		{
+		private const string TableName = "Products";
+		private const string PartitionKey = "Product";
 
-			new Product
-			{
-				Id = 1,
-				Name = "Snappet",
-				Description = "Our mission is to improve learning outcome of children worldwide. We do this by developping multiple applications that support each other.",
-				WebsiteUrl = "snappet.org"
-			},
-			new Product
-			{
-				Id = 2,
-				Name = "Funda",
-				Description = "Funda is the biggest realtor website in the Netherlands",
-				WebsiteUrl = "funda.nl"
-			},
-			new Product
-			{
-				Id = 3,
-				Name = "Transavia",
-				Description = "Transavia b2c was focussed on creating the new award winning platform to help people book their flight",
-				WebsiteUrl = "transavia.com"
-			},
-			new Product
-			{
-				Id = 4,
-				Name = "DTG",
-				Description = "Setting up the website used in their new b2b strategy",
-				WebsiteUrl = "dtg.nl"
-			}
-		};
+		private readonly CloudTable _table;
 
-		public Product GetProduct(int id)
+		public ProductRepository(IBaseRepository baseRepository)
 		{
-			return _products.FirstOrDefault(p => p.Id == id);
+			_table = baseRepository.GetTableReference(TableName);
+		}
+
+		public Product GetProduct(string id)
+		{
+			return (Product)_table.ExecuteAsync(TableOperation.Retrieve<Product>(PartitionKey, id)).Result.Result;
 		}
 
 		public IEnumerable<Product> GetProducts()
 		{
-			return _products;
+			var query = new TableQuery<Product>()
+				.Where(TableQuery.GenerateFilterCondition(Constants.PartitionKey, QueryComparisons.Equal, PartitionKey));
+			
+			return _table.ExecuteQuerySegmentedAsync(query, null).Result;
 		}
 	}
 }
