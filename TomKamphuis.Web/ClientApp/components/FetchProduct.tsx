@@ -35,6 +35,7 @@ export class FetchProduct extends React.Component<RouteComponentProps<{}>, IFetc
 			<h1>Stuff developed</h1>
 			<p>I've worked on numerous projects in the past couple of years. Here you can find an overview on worked on stuff and what I did on making these products even better.</p>
 			{ contents }
+			<p>The fun thing is though, the very website you look at is my own work. It's based on the scaffolding templates supplied by Microsoft but apart from that it's my very own 'pet project'. If you like to know more about the techniques used please check the contents under Tech stack.</p>
 		</div>;
 	}
 

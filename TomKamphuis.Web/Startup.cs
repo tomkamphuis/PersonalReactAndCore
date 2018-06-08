@@ -1,6 +1,9 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.Azure.KeyVault;
+using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TomKamphuis.Repositories.Base;
@@ -22,9 +25,26 @@ namespace TomKamphuis.Web
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc();
-
-			services.AddSingleton<IBaseRepository>(new BaseRepository(Configuration["ConnectionString"]));
+			
+			services.AddSingleton<IBaseRepository>(new BaseRepository(GetConnectionString()));
 			services.AddTransient<IProductRepository, ProductRepository>();
+		}
+
+		private string GetConnectionString()
+		{
+			var tokenProvider = new AzureServiceTokenProvider();
+
+			try
+			{
+				var keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(tokenProvider.KeyVaultTokenCallback));
+				var secret = keyVaultClient.GetSecretAsync(Configuration["ConnectionUrl"]).Result;
+				return secret.Value;
+			}
+			catch (Exception exception)
+			{
+				Console.WriteLine(exception);
+				throw;
+			}
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
