@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TomKamphuis.Repositories.Base;
 using TomKamphuis.Repositories.Implementations;
 using TomKamphuis.Repositories.Interfaces;
+using TomKamphuis.Web.Resources;
 
 namespace TomKamphuis.Web
 {
@@ -37,7 +38,7 @@ namespace TomKamphuis.Web
 			try
 			{
 				var keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(tokenProvider.KeyVaultTokenCallback));
-				var secret = keyVaultClient.GetSecretAsync(Configuration["ConnectionUrl"]).Result;
+				var secret = keyVaultClient.GetSecretAsync(Environment.GetEnvironmentVariable(Constants.KeyvaultEndpoint)).Result;
 				return secret.Value;
 			}
 			catch (Exception exception)
