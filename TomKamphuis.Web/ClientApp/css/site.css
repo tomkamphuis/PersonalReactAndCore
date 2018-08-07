@@ -1,3 +1,11 @@
+h1 {
+	font-size: 4em;
+}
+
+div .navbar-collapse.collapse {
+	border-top: none;
+}
+
 .main-nav li .glyphicon {
     margin-right: 10px;
 }
